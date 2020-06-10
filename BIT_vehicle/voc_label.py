@@ -5,7 +5,8 @@ import glob
 from os import listdir, getcwd
 from os.path import join
 
-classes = ["truck", "bus", "sedan", "microbus", "minivan", "suv"]
+# classes = ["truck", "bus", "sedan", "microbus", "minivan", "suv"]
+classes = ["minivan", "microbus", "sedan", "bus", "truck", "suv"]
 
 
 def convert(size, box):

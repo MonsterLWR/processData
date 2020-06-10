@@ -133,23 +133,23 @@ def main(image_dir, csv_input, output_path, num_shards=1):
 
 if __name__ == '__main__':
     # # used for bit
-    image_dir = r'D:\Code\Python\data\BITVehicle_Dataset\imgs'
+    # image_dir = r'D:\Code\Python\data\BITVehicle_Dataset\imgs'
+    #
+    # csv_dir = r'D:\Code\Python\data\BITVehicle_Dataset\label_csv'
+    # tf_record_dir = r'D:\Code\Python\data\BITVehicle_Dataset\tf_record'
+    # #
+    # # # cls_set = ['suv', 'truck', 'bus', 'sedan', 'microbus', 'minivan']
+    # #
+    # # file_names = ['train_val.csv', 'test.csv']
+    # file_names = ['train_val_500.csv']
+    #
+    # for file in file_names:
+    #     print('processing', file)
+    #     csv_input = os.path.join(csv_dir, file)
+    #     output_path = os.path.join(tf_record_dir, '{}.record'.format(file.split('.')[0]))
+    #     num_shards = 1
+    #     main(image_dir, csv_input, output_path, num_shards)
 
-    csv_dir = r'D:\Code\Python\data\BITVehicle_Dataset\label_csv'
-    tf_record_dir = r'D:\Code\Python\data\BITVehicle_Dataset\tf_record'
-    #
-    # # cls_set = ['suv', 'truck', 'bus', 'sedan', 'microbus', 'minivan']
-    #
-    # file_names = ['train_val.csv', 'test.csv']
-    file_names = ['train_val_500.csv']
-
-    for file in file_names:
-        print('processing', file)
-        csv_input = os.path.join(csv_dir, file)
-        output_path = os.path.join(tf_record_dir, '{}.record'.format(file.split('.')[0]))
-        num_shards = 1
-        main(image_dir, csv_input, output_path, num_shards)
-    #
     # fine_grained_csv_dir = r'D:\Code\Python\data\BITVehicle_Dataset\label_csv\fine_grained_train'
     # file_names = os.listdir(fine_grained_csv_dir)
     # for file in file_names:
@@ -160,18 +160,18 @@ if __name__ == '__main__':
     #     main(image_dir, csv_input, output_path, num_shards)
 
     # self-made data
-    # base_dir = r'D:\Code\Python\data\toycar'
-    # image_dir = os.path.join(base_dir, 'image')
-    #
-    # csv_dir = os.path.join(base_dir, 'csv')
-    # tf_record_dir = os.path.join(base_dir, 'tf_record')
-    #
-    # if not os.path.exists(tf_record_dir):
-    #     os.mkdir(tf_record_dir)
-    #
-    # for file in os.listdir(csv_dir):
-    #     print('processing', file)
-    #     csv_input = os.path.join(csv_dir, file)
-    #     output_path = os.path.join(tf_record_dir, '{}.record'.format(file.split('.')[0]))
-    #     num_shards = 1
-    #     main(image_dir, csv_input, output_path, num_shards)
+    base_dir = r'D:\Code\Python\data\toycar'
+    image_dir = os.path.join(base_dir, 'image')
+
+    csv_dir = os.path.join(base_dir, 'csv')
+    tf_record_dir = os.path.join(base_dir, 'tf_record')
+
+    if not os.path.exists(tf_record_dir):
+        os.mkdir(tf_record_dir)
+
+    for file in os.listdir(csv_dir):
+        print('processing', file)
+        csv_input = os.path.join(csv_dir, file)
+        output_path = os.path.join(tf_record_dir, '{}.record'.format(file.split('.')[0]))
+        num_shards = 1
+        main(image_dir, csv_input, output_path, num_shards)
